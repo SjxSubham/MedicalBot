@@ -36,12 +36,9 @@ MedicalBot is an intelligent chatbot designed to assist users with medical inqui
    ```bash
    pip install -r requirements.txt
    ```
-3. Run the application:
-   ```bash
-   python app.py
-   ```
 
-4. Run on local server
+
+3. Run on local server
    ```bash
    streamlit run medibot.py
    ```
