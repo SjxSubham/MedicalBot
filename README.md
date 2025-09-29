@@ -10,12 +10,26 @@ MedicalBot is an intelligent chatbot designed to assist users with medical inqui
 - **Conversational AI:** Utilizes NLP for natural, human-like conversations.
 - **Resource Recommendations:** Suggests trusted online resources and articles based on user queries.
 
+## Architecture
+
+📊 **[View Detailed Workflow Diagram](workflow_diagram.md)** | 🏗️ **[System Architecture Guide](ARCHITECTURE.md)**
+
+The MedicalBot uses a Retrieval-Augmented Generation (RAG) architecture that combines:
+- Vector database for medical knowledge storage (FAISS)
+- Large Language Model for natural language understanding (Mistral-7B)
+- Interactive web interface for seamless user experience (Streamlit)
+
 ## Technologies Used
 
-- **Programming Languages:** Python (or specify if another language is used)
-- **AI/NLP Libraries:** (e.g., spaCy, NLTK, TensorFlow, OpenAI GPT, etc.)
-- **Frameworks:** (e.g., Flask, Django, Streamlit, etc.)
-- **APIs:** Integration with external medical or symptom-checker APIs (if applicable)
+- **Programming Language:** Python 3.13
+- **Web Framework:** Streamlit (Interactive chat interface)
+- **AI/ML Libraries:** 
+  - LangChain (Document processing and chain management)
+  - HuggingFace Transformers (Mistral-7B-Instruct-v0.3 LLM)
+  - Sentence Transformers (Text embeddings)
+- **Vector Database:** FAISS (Fast similarity search)
+- **Document Processing:** PyPDF (Medical document ingestion)
+- **Environment Management:** Pipenv
 
 ## Getting Started
 
@@ -38,7 +52,12 @@ MedicalBot is an intelligent chatbot designed to assist users with medical inqui
    ```
 
 
-3. Run on local server
+3. Prepare the medical knowledge base (run once):
+   ```bash
+   python create_memory_for_llm.py
+   ```
+
+4. Run on local server:
    ```bash
    streamlit run medibot.py
    ```
